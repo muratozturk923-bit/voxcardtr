@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', 'SF Pro Display', system-ui, sans-serif;
+    background-color: #070708;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    background: rgba(220, 184, 106, 0.3);
+    color: #fff;
+  }
+  /* Premium thin scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #070708;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #a06f24, #dcb86a);
+    border-radius: 8px;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-6 md:px-10;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] md:text-xs uppercase tracking-luxury text-champagne-200/90;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #dcb86a);
+    display: inline-block;
+  }
+
+  .h-display {
+    @apply font-display font-semibold tracking-tight;
+    line-height: 1.05;
+  }
+
+  .gold-text {
+    background: linear-gradient(135deg, #f4e8c8 0%, #dcb86a 45%, #a06f24 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gold-shimmer-text {
+    background: linear-gradient(
+      90deg,
+      #a06f24 0%,
+      #dcb86a 25%,
+      #fff8e1 50%,
+      #dcb86a 75%,
+      #a06f24 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 6s linear infinite;
+  }
+
+  .glass {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .glass-strong {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+  }
+
+  .hairline {
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      rgba(220, 184, 106, 0.4),
+      transparent
+    );
+    height: 1px;
+    width: 100%;
+  }
+
+  .btn-gold {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.6rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    color: #1a1306;
+    background: linear-gradient(135deg, #f4e8c8 0%, #dcb86a 50%, #a06f24 100%);
+    box-shadow:
+      0 10px 30px -10px rgba(207, 161, 74, 0.55),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+    box-shadow:
+      0 18px 40px -10px rgba(207, 161, 74, 0.65),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+  .btn-gold:active {
+    transform: translateY(0);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.55rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #f4e8c8;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(220, 184, 106, 0.35);
+    transition: all 0.3s ease;
+  }
+  .btn-ghost:hover {
+    background: rgba(220, 184, 106, 0.08);
+    border-color: rgba(220, 184, 106, 0.7);
+    color: #fff;
+  }
+
+  .card-glass {
+    @apply glass rounded-2xl p-6 md:p-7 transition-all duration-500;
+  }
+  .card-glass:hover {
+    border-color: rgba(220, 184, 106, 0.35);
+    transform: translateY(-4px);
+    box-shadow:
+      0 30px 60px -30px rgba(207, 161, 74, 0.25),
+      0 1px 0 0 rgba(255, 255, 255, 0.08) inset;
+  }
+
+  .divider-gold {
+    width: 56px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #dcb86a, transparent);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(220, 184, 106, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(220, 184, 106, 0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  }
+}
