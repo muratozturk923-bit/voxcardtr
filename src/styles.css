@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --color-obsidian: #070707;
+  --color-gold: #d9b467;
+  --color-champagne: #f1d99c;
+  --shadow-gold-soft: 0 22px 70px rgba(217, 180, 103, 0.22);
+  --shadow-gold-strong: 0 28px 90px rgba(217, 180, 103, 0.34);
+  --shadow-card: 0 34px 100px rgba(0, 0, 0, 0.58), 0 0 90px rgba(217, 180, 103, 0.18);
+  --shadow-phone: 0 38px 120px rgba(0, 0, 0, 0.62), 0 0 80px rgba(255, 255, 255, 0.06);
+  --shadow-luxury: 0 34px 110px rgba(0, 0, 0, 0.44);
+}
+
+:root {
+  color-scheme: dark;
+  font-family: var(--font-sans);
+  background: #070707;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top, rgba(217, 180, 103, 0.08), transparent 34rem),
+    #070707;
+}
+
+::selection {
+  background: rgba(217, 180, 103, 0.35);
+  color: #fff;
+}
+
+@layer components {
+  .section-spacing {
+    @apply mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28;
+  }
+
+  .glass-card {
+    @apply rounded-[1.8rem] border border-white/10 bg-white/[0.055] shadow-luxury backdrop-blur-2xl;
+  }
+}
+
+@layer utilities {
+  .bg-gold-gradient {
+    background-image: linear-gradient(135deg, #f5dfab 0%, #d9b467 45%, #9f7134 100%);
+  }
+}
+
+.card-tilt {
+  transform: rotate(-8deg);
+  animation: card-rise 7s ease-in-out infinite;
+}
+
+.phone-float {
+  animation: phone-float 8s ease-in-out infinite;
+}
+
+@keyframes card-rise {
+  0%,
+  100% {
+    transform: rotate(-8deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-6deg) translate3d(0, -14px, 0);
+  }
+}
+
+@keyframes phone-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 16px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
