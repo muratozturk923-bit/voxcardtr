@@ -32,7 +32,7 @@ function PremiumMockup() {
         </div>
       </div>
 
-      <div className="metal-card shine absolute bottom-16 left-0 w-[310px] rotate-[-8deg] rounded-[1.75rem] border border-[#f4de9b]/28 bg-[linear-gradient(135deg,#222_0%,#080808_42%,#15110a_62%,#d7b568_100%)] p-6 shadow-[0_35px_110px_rgba(0,0,0,0.62)] sm:w-[365px]">
+      <div className="metal-card shine absolute bottom-16 left-0 w-[310px] rotate-[-8deg] overflow-hidden rounded-[1.75rem] border border-[#f4de9b]/28 bg-[linear-gradient(135deg,#222_0%,#080808_42%,#15110a_62%,#d7b568_100%)] p-6 shadow-[0_35px_110px_rgba(0,0,0,0.62)] sm:w-[365px]">
         <div className="flex items-start justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.36em] text-[#edd792]">VOXCARD</p>
@@ -61,7 +61,7 @@ function PremiumMockup() {
 export function Hero() {
   return (
     <section
-      className="relative isolate overflow-hidden px-5 pb-16 pt-32 sm:px-6 lg:min-h-screen lg:px-8 lg:pb-24 lg:pt-36"
+      className="relative isolate overflow-hidden px-5 pb-16 pt-16 sm:px-6 sm:pt-20 lg:min-h-screen lg:px-8 lg:pb-24 lg:pt-24"
       id="hero"
     >
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(216,189,122,0.18),transparent_28%),radial-gradient(circle_at_86%_18%,rgba(255,255,255,0.08),transparent_24%),linear-gradient(180deg,#050506_0%,#0d0d10_48%,#050506_100%)]" />

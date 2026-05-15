@@ -10,7 +10,7 @@ const navItems = [
 
 export function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/8 bg-[#050506]/70 backdrop-blur-2xl">
+    <header className="sticky inset-x-0 top-0 z-50 border-b border-white/8 bg-[#050506]/78 backdrop-blur-2xl">
       <nav
         aria-label="Ana menü"
         className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8"
@@ -43,6 +43,17 @@ export function Header() {
           Teklif Al
         </Button>
       </nav>
+      <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-5 pb-3 sm:px-6 lg:hidden">
+        {navItems.map((item) => (
+          <a
+            className="shrink-0 rounded-full border border-white/8 bg-white/[0.035] px-4 py-2 text-xs font-semibold text-white/62 transition hover:border-[#d9bd7a]/35 hover:text-[#efd58f]"
+            href={item.href}
+            key={item.label}
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
     </header>
   );
 }
