@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "SF Pro Display", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+}
+
+:root {
+  color-scheme: dark;
+  --background: #050505;
+  --background-soft: #0d0d10;
+  --gold: #d6b88d;
+  --gold-deep: #89693d;
+  --text-soft: rgba(255, 255, 255, 0.72);
+  --border-soft: rgba(255, 255, 255, 0.1);
+  --border-gold: rgba(214, 184, 141, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(214, 184, 141, 0.08), transparent 28%),
+    radial-gradient(circle at 85% 10%, rgba(255, 255, 255, 0.08), transparent 18%),
+    linear-gradient(180deg, #080808 0%, #050505 40%, #09090a 100%);
+  color: white;
+  font-family: "Inter", "SF Pro Display", ui-sans-serif, system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 120px 120px;
+  mask-image: radial-gradient(circle at center, black 42%, transparent 100%);
+  opacity: 0.4;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(214, 184, 141, 0.32);
+  color: white;
+}
+
+.hero-card {
+  background:
+    linear-gradient(145deg, rgba(214, 184, 141, 0.24), rgba(255, 255, 255, 0.04)),
+    linear-gradient(180deg, rgba(18, 18, 19, 0.96), rgba(8, 8, 8, 0.92));
+  backdrop-filter: blur(20px);
+}
+
+.phone-shell {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    rgba(15, 15, 16, 0.85);
+  backdrop-filter: blur(24px);
+}
+
+.profile-shell {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 18px 50px rgba(0, 0, 0, 0.2);
+}
+
+.float-slow {
+  animation: float 7s ease-in-out infinite;
+}
+
+.float-delayed {
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  body::before {
+    background-size: 80px 80px;
+    opacity: 0.28;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .float-slow,
+  .float-delayed {
+    animation: none;
+  }
+}
